@@ -1,0 +1,11 @@
+version: 2.0
+jobs:
+  build:
+    docker:
+      - image: "centos/go-toolset-7-centos7"
+    steps:
+      - checkout:
+          path: /tmp/src/
+      - run:
+          name: s2i assemble
+          command: /usr/libexec/s2i/assemble
